@@ -1,11 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react';
-import { getUser, logout } from './client';
-import { BrowserRouter as Router, Switch, Route, Redirect, AuthPage } from 'react-router-dom';
+import { getUser, logout } from './services/fetch-utils';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import ListPage from './ListPage';
 import DetailPage from './DetailPage';
 import CreatePage from './CreatePage';
+import AuthPage from './AuthPage';
 
 function App() {
   const [user, setUser] = useState('');
