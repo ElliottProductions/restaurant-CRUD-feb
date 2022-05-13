@@ -1,7 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import { getUser, logout } from './services/fetch-utils';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect, NavLink } from 'react-router-dom';
 import ListPage from './ListPage';
 import DetailPage from './DetailPage';
 import CreatePage from './CreatePage';
@@ -30,6 +30,11 @@ function App() {
   return (
     <Router>
       <div className='App'>
+        <header>
+          <NavLink activeClassName='active-link' to="/items">Game List</NavLink>
+          <NavLink activeClassName='active-link' to="/create">Create Page</NavLink>
+          <button onClick={handleLogout}>Logout</button>
+        </header>
         <Switch>
           <Route exact path='/'>
             { user

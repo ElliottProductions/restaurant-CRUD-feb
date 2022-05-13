@@ -1,4 +1,4 @@
-import { client } from './client';
+import { client, checkError } from './client';
 
 export function getUser() {
   return client.auth.session();
@@ -22,3 +22,22 @@ export async function signUp(email, password){
   
   return response.user;
 }
+
+export async function getSongs() {
+  const response = await client
+    .from('inventory')
+    .select();
+  
+  
+  return response.body;    
+}
+
+export async function createSong(song){
+  const response = await client
+    .from('inventory')
+    .insert([song]);
+  
+  return checkError(response);
+}
+  
+  
