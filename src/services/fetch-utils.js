@@ -40,4 +40,26 @@ export async function createSong(song){
   return checkError(response);
 }
   
+export async function getSongByID(id) {
+  const response = await client
+    .from('inventory')
+    .select()
+    .match({ id })
+    .single();
+  
+  return response.body;    
+}
+
+export async function updateSong({ name, album, year, genre, songID }) {
+  const response = await client
+    .from('inventory')
+    .update({ name: name,
+      album: album,
+      year: year,
+      genre: genre })
+    .match({ id: songID });
+  
+  
+  return checkError(response);    
+}
   

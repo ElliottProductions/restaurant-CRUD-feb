@@ -31,8 +31,10 @@ function App() {
     <Router>
       <div className='App'>
         <header>
-          <NavLink activeClassName='active-link' to="/items">Game List</NavLink>
+          <NavLink activeClassName='active-link' to="/items">Song List</NavLink>
+          <br></br>
           <NavLink activeClassName='active-link' to="/create">Create Page</NavLink>
+          <br></br>
           <button onClick={handleLogout}>Logout</button>
         </header>
         <Switch>

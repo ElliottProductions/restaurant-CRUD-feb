@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
-import { createSong, getSongs } from './services/fetch-utils';
+import { createSong } from './services/fetch-utils';
 
 export default function CreatePage() {
 
