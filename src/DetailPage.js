@@ -13,7 +13,6 @@ export default function DetailPage() {
   const [year, setYear] = useState(1991);
   const [genre, setGenre] = useState('Post-Punk');
   const songID = match.params.id;
-  console.log(songID);
 
   useEffect(() => {
     async function fetch() {
