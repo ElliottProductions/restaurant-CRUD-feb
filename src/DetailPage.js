@@ -42,7 +42,7 @@ export default function DetailPage() {
 
   return (
     <>
-      <div>
+      <div className="display-song">
         <h3>{name}</h3>
         <p>{genre}</p>
         <p>{album}</p>
