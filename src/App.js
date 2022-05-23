@@ -30,13 +30,13 @@ function App() {
   return (
     <Router>
       <div className='App'>
-        <header>
+        { user ? <header>
           <NavLink activeClassName='active-link' to="/items">Song List</NavLink>
           <br></br>
           <NavLink activeClassName='active-link' to="/create">Create Page</NavLink>
           <br></br>
           <button onClick={handleLogout}>Logout</button>
-        </header>
+        </header> : <></>}
         <Switch>
           <Route exact path='/'>
             { user
